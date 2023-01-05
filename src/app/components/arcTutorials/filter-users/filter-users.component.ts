@@ -14,6 +14,8 @@ export class FilterUsersComponent {
   firstName:any;
   textValue:any;
   newTextValue:any;
+  totalArray:any;
+  sampleName ='sreekanth'
   users = [
     {userId : 434, username: 'krishna'},
     {userId : 234, username: 'Ram'},
@@ -24,10 +26,12 @@ export class FilterUsersComponent {
 
   }
 
-  newMessage(textValue :any){
+  newMessage(){
     this.router.navigate(['/','listUsers'])
-    this.newTextValue = this.textValue;
-    this.text = this.usersService.changeMessage(textValue);
+    // this.newTextValue = this.textValue;
+    this.text = this.usersService.changeMessage(this.users);
     console.log(this.text)
+    // console.log(this.text)
+    // this.totalArray = this.users
   }
 }

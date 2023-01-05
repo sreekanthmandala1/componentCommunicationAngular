@@ -1,2 +1,5 @@
 <!-- {{listUsers | json}} -->
-{{message}}
+<div *ngFor="let item of message">
+  {{item.username}}
+</div>
+
