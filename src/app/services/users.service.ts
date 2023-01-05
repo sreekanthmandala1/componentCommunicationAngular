@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +17,7 @@ export class UsersService {
     return users;
   }
 
-  messageSource = new BehaviorSubject<any>("");
+  messageSource = new Subject<any>;
   currentMessage = this.messageSource.asObservable();
 
   changeMessage(message:any){
